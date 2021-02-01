@@ -79,12 +79,12 @@ namespace TestDiscord.Modules
         [Alias("h")]
         public Task Help()
         {
-            string helpString = "!get: 取得題庫" + Environment.NewLine;
-            helpString += "!n: 取得數字卡" + Environment.NewLine;
-            helpString += "!add: 增加題庫" + Environment.NewLine;
-            helpString += "!list: 取得所有題庫" + Environment.NewLine;
-            helpString += "!clear: 清空頻道訊息" + Environment.NewLine;
-            helpString += "!help: 幫助清單" + Environment.NewLine;
+            string helpString = "-get: 取得題庫" + Environment.NewLine;
+            helpString += "-n: 取得數字卡" + Environment.NewLine;
+            helpString += "-add: 增加題庫" + Environment.NewLine;
+            helpString += "-list: 取得所有題庫" + Environment.NewLine;
+            helpString += "-clear: 清空頻道訊息" + Environment.NewLine;
+            helpString += "-help: 幫助清單" + Environment.NewLine;
 
             return ReplyAsync(helpString);
         }
