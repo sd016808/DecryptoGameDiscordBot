@@ -5,6 +5,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TestDiscord.Modules;
 using TestDiscord.Services;
 
 namespace TestDiscord
@@ -57,7 +58,8 @@ namespace TestDiscord
             .AddSingleton<LoggingService>()         // Add loggingservice to the collection
             .AddSingleton<Random>()                 // Add random to the collection
             .AddSingleton<DecryptoGameService>()      // Add decryptoGameService to the collection
-            .AddSingleton(Configuration);           // Add the configuration to the collection
+            .AddSingleton(Configuration)           // Add the configuration to the collection
+            .AddSingleton<AudioService>();            // Add the AudioService to the collection
         }
     }
 }

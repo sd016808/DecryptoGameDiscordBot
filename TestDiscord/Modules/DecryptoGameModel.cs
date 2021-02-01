@@ -9,7 +9,7 @@ using TestDiscord.Services;
 namespace TestDiscord.Modules
 {
     [Name("DecryptoGame")]
-    public class DecryptoGameModel:ModuleBase
+    public class DecryptoGameModel:ModuleBase<SocketCommandContext>
     {
         public DecryptoGameService DecryptoGameService { get; set; }
 
