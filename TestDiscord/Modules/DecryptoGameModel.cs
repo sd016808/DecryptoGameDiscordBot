@@ -13,16 +13,16 @@ namespace TestDiscord.Modules
     {
         public DecryptoGameService DecryptoGameService { get; set; }
 
-        [Command("!getWordList")]
-        [Alias("!get", "!g")]
+        [Command("getWordList")]
+        [Alias("get", "g")]
         public Task GetRandomWordList()
         {
             var wordList = DecryptoGameService.GetRandomWordList(4); // default get 4 word
             return ReplyAsync(string.Join(" ", wordList));
         }
 
-        [Command("!randomNumberList")]
-        [Alias("!n")]
+        [Command("randomNumberList")]
+        [Alias("n")]
         public Task GetRandomList()
         {
             var numberList = DecryptoGameService.GetRandomNumberList(3); // default get 4 word
@@ -30,8 +30,8 @@ namespace TestDiscord.Modules
         }
 
         // 'params' will parse space-separated elements into a list
-        [Command("!addWordList")]
-        [Alias("!add", "!a")]
+        [Command("addWordList")]
+        [Alias("add", "a")]
         public Task AddNewWords(params string[] objects)
         {
             var result = DecryptoGameService.AddNewWords(new List<string>(objects));
@@ -43,15 +43,15 @@ namespace TestDiscord.Modules
 
         // 'params' will parse space-separated elements into a list
         [Command("!wordList")]
-        [Alias("!list", "!l")]
+        [Alias("list", "l")]
         public Task GetWordList()
         {
             var wordList = DecryptoGameService.GetWordList();
             return ReplyAsync(string.Join(Environment.NewLine, wordList));
         }
 
-        [Command("!clear", RunMode = RunMode.Async)]
-        [Alias("!c")]
+        [Command("clear", RunMode = RunMode.Async)]
+        [Alias("c")]
         [Summary("Deletes the specified amount of messages.")]
         [RequireUserPermission(GuildPermission.Administrator)]
         [RequireBotPermission(ChannelPermission.ManageMessages)]
@@ -75,8 +75,8 @@ namespace TestDiscord.Modules
             await m.DeleteAsync();
         }
 
-        [Command("!help", RunMode = RunMode.Async)]
-        [Alias("!h")]
+        [Command("help", RunMode = RunMode.Async)]
+        [Alias("h")]
         public Task Help()
         {
             string helpString = "!get: 取得題庫" + Environment.NewLine;
